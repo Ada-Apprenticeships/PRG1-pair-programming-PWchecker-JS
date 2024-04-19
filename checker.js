@@ -21,7 +21,7 @@ const passwordCriteria = {
     uppercase: /[A-Z]/,                // Must have uppercase letters
     lowercase: /[a-z]/,                // Must have lowercase letters
     digit: /[0-9]/,                    // Must have digits
-    specialChar: /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/\|=]/  // Must have special characters
+    specialChar: /[!@#£$%^&*()_+{}\[\]:;<>,.?~\\/\|=]/  // Must have special characters
 };
 
 function isStrongPassword(password) {
