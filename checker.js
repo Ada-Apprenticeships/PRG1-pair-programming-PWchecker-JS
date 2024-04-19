@@ -42,7 +42,7 @@ function getPasswordStrength(password) {
         passwordCriteria.lowercase.test(password),
         passwordCriteria.digit.test(password),
         passwordCriteria.specialChar.test(password)
-    ].filter(x => x === true).length;
+    ].filter(x => x).length;
   
     if (conditionsPassed === 5) {
       return "Strong";
