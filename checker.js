@@ -17,7 +17,7 @@ function getCurrentDateTimeFormatted() {
 }
 
 const passwordCriteria = {
-    length: /.{8,}/,                    // Minimum 8 characters
+    length: /^[a-zA-Z0-9!@#£$%^&*()_+{}\[\]:;<>,.?~\\/\|=]{8,}$/,                    // Minimum 8 characters
     uppercase: /[A-Z]/,                // Must have uppercase letters
     lowercase: /[a-z]/,                // Must have lowercase letters
     digit: /[0-9]/,                    // Must have digits
