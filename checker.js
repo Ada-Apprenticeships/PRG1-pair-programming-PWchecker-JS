@@ -17,15 +17,16 @@ function getCurrentDateTimeFormatted() {
 }
 
 const passwordCriteria = {
-    length: /.{8,}/,                    // Minimum 8 characters
+    length: /^[a-zA-Z0-9!@#£$%^&*()_+{}\[\]:;<>,.?~\\/\|=]{8,}$/,                    // Minimum 8 characters
     uppercase: /[A-Z]/,                // Must have uppercase letters
     lowercase: /[a-z]/,                // Must have lowercase letters
     digit: /[0-9]/,                    // Must have digits
-    specialChar: /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/\|=]/  // Must have special characters
+    specialChar: /[!@#£$%^&*()_+{}\[\]:;<>,.?~\\/\|=]/  // Must have special characters
 };
 
 function isStrongPassword(password) {
-    // Check each condition using the predefined regex
+    // Optional one liner 
+    // return Object.values(passwordCriteria).every(criteria.test(password))
     return passwordCriteria.length.test(password) &&
            passwordCriteria.uppercase.test(password) &&
            passwordCriteria.lowercase.test(password) &&
@@ -41,7 +42,7 @@ function getPasswordStrength(password) {
         passwordCriteria.lowercase.test(password),
         passwordCriteria.digit.test(password),
         passwordCriteria.specialChar.test(password)
-    ].filter(x => x === true).length;
+    ].filter(x => x).length;
   
     if (conditionsPassed === 5) {
       return "Strong";
