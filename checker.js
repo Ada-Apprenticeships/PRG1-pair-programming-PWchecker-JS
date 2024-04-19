@@ -25,7 +25,8 @@ const passwordCriteria = {
 };
 
 function isStrongPassword(password) {
-    // Check each condition using the predefined regex
+    // Optional one liner 
+    // return Object.values(passwordCriteria).every(criteria.test(password))
     return passwordCriteria.length.test(password) &&
            passwordCriteria.uppercase.test(password) &&
            passwordCriteria.lowercase.test(password) &&
